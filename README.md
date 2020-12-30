@@ -1,2 +1,0 @@
-# musicPlayer
-ReactJS music player
