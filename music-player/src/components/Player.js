@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -31,6 +31,12 @@ const Player = ({ isPlaying, setIsPlaying, currentSong }) => {
         audioRef.current.currentTime = e.target.value;
         setSongInfo({ ...songInfo, currentTime: e.target.value })
     }
+    // Whenever the current song changes and the status is playing, automatically play the new song
+    useEffect(() => {
+        if (isPlaying && audioRef.current.paused) {
+            audioRef.current.play()
+        }
+    }, [isPlaying, currentSong])
 
     return (
         <div className="player">
