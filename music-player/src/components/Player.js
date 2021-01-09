@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-const Player = ({ songs, setSongs, isPlaying, setIsPlaying, currentSong, setCurrentSong }) => {
+const Player = ({ songs, isPlaying, setIsPlaying, currentSong, setCurrentSong }) => {
     // state
     const [songInfo, setSongInfo] = useState({
         currentTime: 0,
@@ -20,7 +20,11 @@ const Player = ({ songs, setSongs, isPlaying, setIsPlaying, currentSong, setCurr
         setIsPlaying(!isPlaying);
     }
     const updateTimeHandler = (e) => {
-        setSongInfo({ ...songInfo, currentTime: e.target.currentTime, duration: e.target.duration });
+        setSongInfo({
+            ...songInfo,
+            currentTime: e.target.currentTime,
+            duration: e.target.duration
+        });
     }
     const getTime = (time) => {
         return (
@@ -41,23 +45,38 @@ const Player = ({ songs, setSongs, isPlaying, setIsPlaying, currentSong, setCurr
         )
     }
     // Whenever the current song changes and the status is playing, automatically play the new song
-    useEffect(() => {
-        if (isPlaying && audioRef.current.paused) {
-            audioRef.current.play()
+    // useEffect(() => {
+    //     if (isPlaying && audioRef.current.paused) {
+    //         audioRef.current.play()
+    //     }
+    // }, [isPlaying, currentSong])
+
+    const autoPlayHandler = () => {
+        if (isPlaying) {
+            audioRef.current.play();
         }
-    }, [isPlaying, currentSong])
+    }
+    const trackAnimation = {
+        transform: `translateX(${(songInfo.currentTime / songInfo.duration) * 100}%)`
+    }
 
     return (
         <div className="player">
             <div className="song-control">
                 <p>{getTime(songInfo.currentTime)}</p>
-                <input
-                    min={0}
-                    max={songInfo.duration || 0}
-                    value={songInfo.currentTime}
-                    type="range"
-                    onChange={dragHandler}
-                />
+                <div
+                    className="track"
+                    style={{ background: `linear-gradient(to right,${currentSong.color[0]}, ${currentSong.color[1]})` }}
+                >
+                    <input
+                        min={0}
+                        max={songInfo.duration || 0}
+                        value={songInfo.currentTime}
+                        type="range"
+                        onChange={dragHandler}
+                    />
+                    <div className="animate-track" style={trackAnimation}></div>
+                </div>
                 <p>{getTime(songInfo.duration || 0)}</p>
             </div>
             <div className="play-control">
@@ -84,6 +103,7 @@ const Player = ({ songs, setSongs, isPlaying, setIsPlaying, currentSong, setCurr
                 src={currentSong.audio}
                 onTimeUpdate={updateTimeHandler}
                 onLoadedMetadata={updateTimeHandler}
+                onCanPlay={autoPlayHandler}
             ></audio>
         </div>
     );

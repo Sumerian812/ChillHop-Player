@@ -8,8 +8,7 @@ function chillHop() {
             artist: "Aso, Middle School, Aviino",
             audio: "https://mp3.chillhop.com/serve.php/?mp3=10075",
             color: ["#205950", "#2ab3bf"],
-            id: uuidv4(),
-            active: true,
+            id: uuidv4()
         },
         {
             name: "Daylight",
@@ -18,8 +17,7 @@ function chillHop() {
             artist: "Aiguille",
             audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
             color: ["#EF8EA9", "#ab417f"],
-            id: uuidv4(),
-            active: false,
+            id: uuidv4()
         },
         {
             name: "Keep Going",
@@ -28,8 +26,7 @@ function chillHop() {
             artist: "Swørn",
             audio: "https://mp3.chillhop.com/serve.php/?mp3=9222",
             color: ["#CD607D", "#c94043"],
-            id: uuidv4(),
-            active: false,
+            id: uuidv4()
         },
         {
             name: "Nightfall",
@@ -38,8 +35,7 @@ function chillHop() {
             artist: "Aiguille",
             audio: "https://mp3.chillhop.com/serve.php/?mp3=9148",
             color: ["#EF8EA9", "#ab417f"],
-            id: uuidv4(),
-            active: false,
+            id: uuidv4()
         },
         {
             name: "Reflection",
@@ -48,8 +44,7 @@ function chillHop() {
             artist: "Swørn",
             audio: "https://mp3.chillhop.com/serve.php/?mp3=9228",
             color: ["#CD607D", "#c94043"],
-            id: uuidv4(),
-            active: false,
+            id: uuidv4()
         },
         {
             name: "Under the City Stars",
@@ -58,8 +53,7 @@ function chillHop() {
             artist: "Aso, Middle School, Aviino",
             audio: "https://mp3.chillhop.com/serve.php/?mp3=10074",
             color: ["#205950", "#2ab3bf"],
-            id: uuidv4(),
-            active: false,
+            id: uuidv4()
         },
         {
             name: "Sleepover",
@@ -67,8 +61,7 @@ function chillHop() {
             artist: "Nymano, JK the Sage",
             audio: "https://mp3.chillhop.com/serve.php/?mp3=10130",
             color: ["#83668B", "#5A5281"],
-            id: uuidv4(),
-            active: false
+            id: uuidv4()
         },
         {
             name: "Inside",
@@ -76,8 +69,7 @@ function chillHop() {
             cover: "https://chillhop.com/wp-content/uploads/2020/07/edaf1202cf33c7a2a122b7494a7e4d3e643af45f-1024x1024.jpg",
             audio: "https://mp3.chillhop.com/serve.php/?mp3=9322",
             color: ["#B95F64", "#CA90AA"],
-            id: uuidv4(),
-            active: false
+            id: uuidv4()
         }
     ];
 }
