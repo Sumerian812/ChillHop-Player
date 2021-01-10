@@ -104,6 +104,7 @@ const Player = ({ songs, isPlaying, setIsPlaying, currentSong, setCurrentSong })
                 onTimeUpdate={updateTimeHandler}
                 onLoadedMetadata={updateTimeHandler}
                 onCanPlay={autoPlayHandler}
+                onEnded={() => skipTrackHandler("forward")}
             ></audio>
         </div>
     );
