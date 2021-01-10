@@ -2,12 +2,7 @@ import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-const Player = ({ songs, isPlaying, setIsPlaying, currentSong, setCurrentSong }) => {
-    // state
-    const [songInfo, setSongInfo] = useState({
-        currentTime: 0,
-        duration: 0
-    })
+const Player = ({ songInfo, setSongInfo, songs, isPlaying, setIsPlaying, currentSong, setCurrentSong }) => {
     // ref
     const audioRef = useRef(null)
     // event handlers
@@ -44,13 +39,6 @@ const Player = ({ songs, isPlaying, setIsPlaying, currentSong, setCurrentSong })
                 : songs[mod(currentIndex - 1, songs.length)]
         )
     }
-    // Whenever the current song changes and the status is playing, automatically play the new song
-    // useEffect(() => {
-    //     if (isPlaying && audioRef.current.paused) {
-    //         audioRef.current.play()
-    //     }
-    // }, [isPlaying, currentSong])
-
     const autoPlayHandler = () => {
         if (isPlaying) {
             audioRef.current.play();
