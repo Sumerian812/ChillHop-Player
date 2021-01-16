@@ -1,17 +1,34 @@
 import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import recordPlayerArm from "../assets/arm1.png";
+import needleAudio from "../assets/NeedleDrop.mp3";
+import clickSound from "../assets/click.mp3";
 
-const Player = ({ songInfo, setSongInfo, songs, isPlaying, setIsPlaying, currentSong, setCurrentSong }) => {
+const Player = ({ songInfo, setSongInfo, songs, isPlaying, setIsPlaying, currentSong,
+    setCurrentSong, libraryStatus }) => {
+    // state
+    const [armLifted, setArmLifted] = useState(true)
     // ref
     const audioRef = useRef(null)
+    const needleRef = useRef(null)
+    const clickRef = useRef(null)
     // event handlers
-    const playSongHandler = () => {
+    const playSongHandler = (e) => {
+        if (e.target.id === "playerArm") {
+            clickRef.current.play();
+            clickRef.current.volume = 0.3;
+        }
         if (isPlaying) {
             audioRef.current.pause();
         } else {
-            audioRef.current.play();
+            setTimeout(() => {
+                needleRef.current.play();
+                audioRef.current.play();
+            }, 500)
+
         }
+        setArmLifted(!armLifted);
         setIsPlaying(!isPlaying);
     }
     const updateTimeHandler = (e) => {
@@ -47,9 +64,19 @@ const Player = ({ songInfo, setSongInfo, songs, isPlaying, setIsPlaying, current
     const trackAnimation = {
         transform: `translateX(${(songInfo.currentTime / songInfo.duration) * 100}%)`
     }
+    const armAnimation = armLifted
+        ? { transform: `rotate(-55deg)`, transformOrigin: `65% 20%` }
+        : { transform: `rotate(0deg)`, transformOrigin: `65% 20%` };
 
     return (
         <div className="player">
+            <img src={recordPlayerArm}
+                id="playerArm"
+                alt="record player arm"
+                className={`${libraryStatus ? 'record-player-arm-active-lib' : 'record-player-arm'}`}
+                onClick={playSongHandler}
+                style={armAnimation}
+            />
             <div className="song-control">
                 <p>{getTime(songInfo.currentTime)}</p>
                 <div
@@ -86,6 +113,14 @@ const Player = ({ songInfo, setSongInfo, songs, isPlaying, setIsPlaying, current
                     onClick={() => skipTrackHandler("forward")}
                 />
             </div>
+            <audio
+                ref={needleRef}
+                src={needleAudio}
+            ></audio>
+            <audio
+                ref={clickRef}
+                src={clickSound}
+            ></audio>
             <audio
                 ref={audioRef}
                 src={currentSong.audio}

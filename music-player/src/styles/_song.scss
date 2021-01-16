@@ -4,24 +4,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    .library-active {
-        transition: all 0.5s ease;
-        z-index: 3;
-        position: absolute;
-        right: 30%;
-        top: 1%;
-        border-radius: 0%;
-        width: 20%;
-    }
-    .record-player-arm {
-        transition: all 0.5s ease;
-        z-index: 3;
-        position: absolute;
-        right: 35%;
-        top: -1%;
-        border-radius: 0%;
-        width: 23%;
-    }
     .album-cover {
         width: 20%;
         border-radius: 50%;
@@ -38,17 +20,6 @@
     .song-container{
         .album-cover {
             width: 50%;
-        }
-        .library-active {
-            display: none;
-        }
-        .record-player-arm {
-            z-index: 3;
-            position: absolute;
-            right: 15%;
-            top: 12%;
-            border-radius: 0%;
-            width: 45%;
         }
     }
 }
