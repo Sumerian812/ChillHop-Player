@@ -1,8 +1,16 @@
 {
   "files": {
-    "main.css": "./static/css/main.694f7538.css",
-    "main.js": "./static/js/main.50608ed8.js",
+    "main.css": "./static/css/main.a7cd468a.css",
+    "main.js": "./static/js/main.ad1ac6b5.js",
     "static/js/488.ef237dfe.chunk.js": "./static/js/488.ef237dfe.chunk.js",
+    "static/media/Reflection.mp3": "./static/media/Reflection.41b1a25ed2408a7d7a71.mp3",
+    "static/media/BeaverCreek.mp3": "./static/media/BeaverCreek.2983b061b4d83212a889.mp3",
+    "static/media/Nightfall.mp3": "./static/media/Nightfall.1001b2bf2b2af110420f.mp3",
+    "static/media/KeepGoing.mp3": "./static/media/KeepGoing.02a6333263f2e10918ab.mp3",
+    "static/media/DayAndNight.mp3": "./static/media/DayAndNight.a13ffd3276bfa23edfe1.mp3",
+    "static/media/Inside.mp3": "./static/media/Inside.8a8a78da4ae467b75df4.mp3",
+    "static/media/UnderTheCityStars.mp3": "./static/media/UnderTheCityStars.6a78245ee662104782eb.mp3",
+    "static/media/Sleepover.mp3": "./static/media/Sleepover.7eb4821ea14f93620b35.mp3",
     "static/media/insideMiscel.jpg": "./static/media/insideMiscel.ae55464aa2cb9017f4cf.jpg",
     "static/media/beaverCreek.jpg": "./static/media/beaverCreek.d767ecb34ff880eb7f87.jpg",
     "static/media/reflectionSworn.jpg": "./static/media/reflectionSworn.4f5b8c8bbac4ab8186c3.jpg",
@@ -12,12 +20,12 @@
     "static/media/arm1.png": "./static/media/arm1.6b32fa41c764ec28710f.png",
     "static/media/click.mp3": "./static/media/click.86e972e553c6baad3a2b.mp3",
     "index.html": "./index.html",
-    "main.694f7538.css.map": "./static/css/main.694f7538.css.map",
-    "main.50608ed8.js.map": "./static/js/main.50608ed8.js.map",
+    "main.a7cd468a.css.map": "./static/css/main.a7cd468a.css.map",
+    "main.ad1ac6b5.js.map": "./static/js/main.ad1ac6b5.js.map",
     "488.ef237dfe.chunk.js.map": "./static/js/488.ef237dfe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.694f7538.css",
-    "static/js/main.50608ed8.js"
+    "static/css/main.a7cd468a.css",
+    "static/js/main.ad1ac6b5.js"
   ]
 }
