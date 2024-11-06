@@ -1,41 +1,43 @@
 import { v4 as uuidv4 } from "uuid";
-import beaverCreekImg from "./assets/beaverCreek.jpg";
-import daylightAiguille from "./assets/daylightAiguille.jpg";
-import reflectionSworn from "./assets/reflectionSworn.jpg";
-import mirage from "./assets/mirage.jpg";
-import insideMiscel from "./assets/insideMiscel.jpg";
+// images
+import beaverCreekImg from "./assets/images/beaverCreek.jpg";
+import daylightAiguille from "./assets/images/daylightAiguille.jpg";
+import reflectionSworn from "./assets/images/reflectionSworn.jpg";
+import mirage from "./assets/images/mirage.jpg";
+import insideMiscel from "./assets/images/insideMiscel.jpg";
+//audio
+import beaverCreekAudio from "./assets/audio/BeaverCreek.mp3"; 
+import dayAndNightAudio from "./assets/audio/DayAndNight.mp3";
+import keepGoingAudio from "./assets/audio/KeepGoing.mp3";
+import nightfallAudio from "./assets/audio/Nightfall.mp3";
+import reflectionAudio from "./assets/audio/Reflection.mp3";
+import underCityStarsAudio from "./assets/audio/UnderTheCityStars.mp3";
+import sleepoverAudio from "./assets/audio/Sleepover.mp3";
+import insideAudio from "./assets/audio/Inside.mp3";
 
 function chillHop() {
     return [
         {
-            name: "Beaver Creek",
-            cover: beaverCreekImg,
-            artist: "Aso, Middle School, Aviino",
-            audio: "https://mp3.chillhop.com/serve.php/?mp3=10075",
-            color: ["#205950", "#2ab3bf"],
-            id: uuidv4()
-        },
-        {
-            name: "Daylight",
-            cover: daylightAiguille,
-            artist: "Aiguille",
-            audio: "https://mp3.chillhop.com/serve.php/?mp3=9272",
-            color: ["#EF8EA9", "#ab417f"],
-            id: uuidv4()
-        },
-        {
             name: "Keep Going",
             cover: reflectionSworn,
             artist: "Swørn",
-            audio: "https://mp3.chillhop.com/serve.php/?mp3=9222",
+            audio: keepGoingAudio,
             color: ["#CD607D", "#c94043"],
             id: uuidv4()
         },
         {
-            name: "Nightfall",
+            name: "Beaver Creek",
+            cover: beaverCreekImg,
+            artist: "Aso, Middle School, Aviino",
+            audio: beaverCreekAudio,
+            color: ["#205950", "#2ab3bf"],
+            id: uuidv4()
+        },
+        {
+            name: "Day and Night",
             cover: daylightAiguille,
             artist: "Aiguille",
-            audio: "https://mp3.chillhop.com/serve.php/?mp3=9148",
+            audio: dayAndNightAudio,
             color: ["#EF8EA9", "#ab417f"],
             id: uuidv4()
         },
@@ -43,7 +45,7 @@ function chillHop() {
             name: "Reflection",
             cover: reflectionSworn,
             artist: "Swørn",
-            audio: "https://mp3.chillhop.com/serve.php/?mp3=9228",
+            audio: reflectionAudio,
             color: ["#CD607D", "#c94043"],
             id: uuidv4()
         },
@@ -51,15 +53,23 @@ function chillHop() {
             name: "Under the City Stars",
             cover: beaverCreekImg,
             artist: "Aso, Middle School, Aviino",
-            audio: "https://mp3.chillhop.com/serve.php/?mp3=10074",
+            audio: underCityStarsAudio,
             color: ["#205950", "#2ab3bf"],
+            id: uuidv4()
+        },
+        {
+            name: "Nightfall",
+            cover: daylightAiguille,
+            artist: "Aiguille",
+            audio: nightfallAudio,
+            color: ["#EF8EA9", "#ab417f"],
             id: uuidv4()
         },
         {
             name: "Sleepover",
             cover: mirage,
             artist: "Nymano, JK the Sage",
-            audio: "https://mp3.chillhop.com/serve.php/?mp3=10130",
+            audio: sleepoverAudio,
             color: ["#83668B", "#5A5281"],
             id: uuidv4()
         },
@@ -67,7 +77,7 @@ function chillHop() {
             name: "Inside",
             artist: "Miscél",
             cover: insideMiscel,
-            audio: "https://mp3.chillhop.com/serve.php/?mp3=9322",
+            audio: insideAudio,
             color: ["#B95F64", "#CA90AA"],
             id: uuidv4()
         }

@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause, faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import recordPlayerArm from "../assets/arm1.png";
-import needleAudio from "../assets/NeedleDrop.mp3";
-import clickSound from "../assets/click.mp3";
+import recordPlayerArm from "../assets/images/arm1.png";
+import needleAudio from "../assets/audio/NeedleDrop.mp3";
+import clickSound from "../assets/audio/click.mp3";
 
 const Player = ({ songInfo, setSongInfo, songs, isPlaying, setIsPlaying, currentSong,
     setCurrentSong, libraryStatus }) => {

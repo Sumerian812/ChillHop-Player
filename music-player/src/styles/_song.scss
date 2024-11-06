@@ -23,3 +23,16 @@
         }
     }
 }
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .album-cover.spinning {
+    animation: spin 5s linear infinite;
+  }
